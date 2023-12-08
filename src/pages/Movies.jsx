@@ -64,7 +64,7 @@ const handleClick = (e) => {
         padding: '8px',
         fontSize: '16px',
         borderRadius: '4px',
-        border: '1px solid #ccc',
+        border: '1px solid #FF4500',
       }}/>
         </label>
        
