@@ -1,5 +1,10 @@
-import { NavLink, Routes, Route } from 'react-router-dom';
+import { NavLink, Routes, Route, Navigate } from 'react-router-dom';
+import { lazy,Suspense} from "react";
 
+const Home = lazy(() => import('../pages/Home'));
+const Movies  = lazy(() => import('../pages/Movies'));
+const MovieDetails = lazy(() => import('../pages/MoviesDetails'));
+const Loader = lazy(() => import("./Loader/Loader"));
 
 export const App = () => {
   return (
@@ -13,10 +18,15 @@ export const App = () => {
         </nav>
       </header>
       <main>
+        <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/movies" element={Movies}/>
-        </Routes>
+          <Route path="/movies" element={<Movies/>} />
+          <Route path="/movies/:moviesId/*" element={<MovieDetails />} />
+            
+          <Route path="*" element={<Navigate to='/'/>} />
+          </Routes>
+        </Suspense>
       </main>
     </div>
   )

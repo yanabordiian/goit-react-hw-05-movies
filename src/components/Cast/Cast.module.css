@@ -1,0 +1,41 @@
+.list {
+    list-style: none;
+    margin: 30px 0;
+    padding: 0 0 0 30px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.photoCard {
+    display: flex;
+    justify-content: center;
+
+}
+
+.img {
+    border-radius: 14px;
+}
+.item {
+    width: 210px;
+    box-shadow: 0px -2px 10px 0px rgba(45, 45, 45, 0.75);
+    -webkit-box-shadow: 0px -2px 10px 0px rgba(45, 45, 45, 0.75);
+    -moz-box-shadow: 0px -2px 10px 0px rgba(45, 45, 45, 0.75);
+
+    transition: transform 500ms linear
+}
+
+.item:hover,
+.item:active {
+    z-index: 10;
+    transform: scale(1.05);
+
+}
+.text {
+    margin-top: 14px;
+    font-size: 18px;
+}
+
+.cast {
+    margin-bottom: 14px;
+}
